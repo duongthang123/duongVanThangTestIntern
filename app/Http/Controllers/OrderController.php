@@ -23,13 +23,6 @@ class OrderController extends Controller
     {
         $data = $request->all();
         $dataJson = json_encode($data);
-//        $count = 1;
-//        if(!file_exists(storage_path('app/orders_1.json'))) {
-//            file_put_contents(storage_path('app/orders_1.json'), $dataJson);
-//        } else{
-//            $count++;
-//            file_put_contents(storage_path("app/orders_{$count}.json"), $dataJson);
-//        }
         file_put_contents(storage_path('app/orders.json'), $dataJson);
 
         return redirect()->route('step2');
